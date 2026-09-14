@@ -4,8 +4,8 @@ from datetime import datetime, timezone, timedelta
 import pytz
 
 def get_sun_events(current_date):
-    # API call for sunrise and sunset times in San Francisco, CA
-    sun_times_url = f"https://api.sunrise-sunset.org/json?lat=37.7749000&lng=-122.4194000&date={current_date}"
+    # API call for sunrise and sunset times in Lebanon, PA
+    sun_times_url = f"https://api.sunrise-sunset.org/json?lat=40.3423000&lng=-76.4161000&date={current_date}"
     sun_times_url += f"&date={current_date}"
     print(f"sun_times_url: {sun_times_url}")
 
@@ -38,14 +38,14 @@ def get_sun_events(current_date):
 
     # Create an event for today's sunrise
     e = Event()
-    e.name = "🌅 Sunrise"
+    e.name = "🌻 Sunrise"
     e.begin = datetime_objects['sunrise'].strftime(calendar_time_format)
     e.duration = {'seconds': 15*60}
     events.append(e)
 
     # Create an event for today's sunset
     e = Event()
-    e.name = "🌇 Sunset"
+    e.name = "✨ Sunset"
     e.begin = datetime_objects['sunset'].strftime(calendar_time_format)
     e.duration = {'seconds': 15*60}
     events.append(e)
